@@ -11,10 +11,14 @@ def NumeroPar(fichero):
 
     if os.path.isfile(fichero):
         with open(fichero,"r") as file:
-            numeros = file.readline()
+            numeros = file.readlines()
 
             with open("ListaPares","w") as file:
                 for numero in numeros:
                     if (int(numero)) %2 ==0:
                         file.write(numero)
-    return
+    else:
+        print("El fichero con nombre: "+ fichero +"no existe")
+OrdenarLista([90328490,34124,3475,3,4654,123,5,424,])
+NumeroPar("Listardenada.txt")
+
